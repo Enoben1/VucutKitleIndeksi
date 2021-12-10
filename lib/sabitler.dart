@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 
-Color rkZeminArkaPlan = Colors.grey.shade800;
+Color rkZeminArkaPlan = Color.fromRGBO(29,33,54,1);
 
-Color rkAktifCardBackColor = Colors.grey.shade700;
-Color rkPasifCardBackColor = Colors.grey.shade900;
+Color rkAktifCardBackColor = Color.fromRGBO(45,45,60,1);
+Color rkPasifCardBackColor = Color.fromRGBO(50,50,68,1);
 
-Color rkCardForeColor = Colors.white70;
+Color rkCardForeColor = Color.fromRGBO(255,255,255,1);
+
+TextStyle stilBoyYaziStyle = TextStyle(color: rkCardForeColor, fontSize: 20);
+TextStyle stilCmYaziStyle = TextStyle(color: rkCardForeColor);
+TextStyle stilRakamYaziStyle = TextStyle(
+  color: rkCardForeColor,
+  fontSize: 50,
+);
 
 TextStyle tsActivCardColor = TextStyle(
   color: rkCardForeColor,
+  fontSize: 23,
 );
 
 TextStyle tsHeightStyle = TextStyle(
@@ -23,9 +31,9 @@ TextStyle tsCmStyle = TextStyle(
 
 SliderThemeData stSliderTheme = SliderThemeData(
   inactiveTrackColor: Color(0xFF8D8E98),
-  activeTrackColor: Colors.yellow,
-  thumbColor: Color(0xFFEB1555),
+  activeTrackColor: Color.fromRGBO(91,41,67,1),
+  thumbColor: Color.fromRGBO(213,67,103,1),
   overlayColor: Color(0x29EB1555),
-  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
-  overlayShape: RoundSliderOverlayShape(overlayRadius: 45.0),
+  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
+  overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0),
 );
