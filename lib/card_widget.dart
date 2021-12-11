@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:vki_hesaplama/sabitler.dart';
 
 class GuzelCard extends StatelessWidget {
-  GuzelCard({@required this.simge, this.metin, this.cardColor, this.fonksiyon});
+  GuzelCard({@required this.simge, this.metin, this.cardColor, this.fonksiyon, this.shadowcolor, this.elevation});
 
   final IconData simge;
   final String metin;
   final Color cardColor;
   final Function fonksiyon;
+  final Color shadowcolor;
+  final double elevation;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,8 @@ class GuzelCard extends StatelessWidget {
       onTap: fonksiyon,
       child: Card(
         shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        elevation: 15.0,
+        elevation: elevation,
+        shadowColor: shadowcolor,
         color: cardColor,
         child: Column(
           children: [

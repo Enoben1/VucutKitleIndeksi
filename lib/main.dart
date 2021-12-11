@@ -8,6 +8,8 @@ void main() {
 }
 
 enum cinsiyet { male, female, notrs }
+double elevationman = 10.0;
+double elevationgirl = 10.0;
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
@@ -37,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int height = 180;
   int weight = 70;
   int age = 25;
-  double vki ;
+  double vki;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: [
           Expanded(
+            flex: 2,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -66,6 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       fonksiyon: () {
                         setState(() {
                           seciliCinsiyet = cinsiyet.male;
+                          elevationman = 50;
+                          elevationgirl = 10;
                         });
                       },
                       cardColor: seciliCinsiyet == cinsiyet.male
@@ -73,6 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           : rkPasifCardBackColor,
                       simge: Icons.male,
                       metin: "ERKEK",
+                      shadowcolor: Colors.blue,
+                      elevation: elevationman,
                     ),
                   ],
                 ),
@@ -82,6 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       fonksiyon: () {
                         setState(() {
                           seciliCinsiyet = cinsiyet.female;
+                          elevationgirl = 50;
+                          elevationman = 10;
                         });
                       },
                       cardColor: seciliCinsiyet == cinsiyet.female
@@ -89,6 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           : rkPasifCardBackColor,
                       simge: Icons.female,
                       metin: "KADIN",
+                      shadowcolor: Colors.red,
+                      elevation: elevationgirl,
                     ),
                   ],
                 ),
@@ -96,10 +107,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Expanded(
+            flex: 3,
             child: OrtakCard(
               () {},
               Colors.red,
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "HEIGHT",
@@ -138,6 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Expanded(
+            flex: 3,
             child: Row(
               children: [
                 Expanded(
@@ -171,10 +185,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  weight = weight + 1;
+                                  weight = weight - 1;
                                 });
                               },
-                              child: Icon(Icons.add),
+                              child: Icon(Icons.remove_outlined),
                             ),
                             FloatingActionButton(
                               backgroundColor:
@@ -182,10 +196,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  weight = weight - 1;
+                                  weight = weight + 1;
                                 });
                               },
-                              child: Icon(Icons.remove_outlined),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
@@ -224,10 +238,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  age = age + 1;
+                                  age = age - 1;
                                 });
                               },
-                              child: Icon(Icons.add),
+                              child: Icon(Icons.remove_outlined),
                             ),
                             FloatingActionButton(
                               backgroundColor:
@@ -235,10 +249,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  age = age - 1;
+                                  age = age + 1;
                                 });
                               },
-                              child: Icon(Icons.remove_outlined),
+                              child: Icon(Icons.add),
                             ),
                           ],
                         ),
@@ -249,18 +263,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          Container(
-            child: ElevatedButton(
-                onPressed: () {
-                  vki = weight/((height/100)*(height/100));
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Sonuc(vki = vki)),
-                  );
-                },
-                child: Text("HESAPLA")),
-            width: double.infinity,
-            height: 50,
+          Expanded(
+            flex: 1,
+            child: Container(
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Color.fromRGBO(232, 61, 102, 1)),
+                  onPressed: () {
+                    vki = weight / ((height / 100) * (height / 100));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Sonuc(vki = vki)),
+                    );
+                  },
+                  child: Text("HESAPLA")),
+              width: double.infinity,
+            ),
           )
         ],
       ),
