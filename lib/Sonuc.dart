@@ -12,7 +12,7 @@ class Sonuc extends StatelessWidget {
   var cvpzayif = "İdeal kilonun altında kalmışsın ama yükselmen için yanındayız! Tek ihtiyacın biraz motivasyon biraz da düzenli ve dengeli beslenme.";
   var cvpnormal = "Harikasın! Tam da ideal kilondasın! Şimdi sana düşen bunu korumak. Hareketi ihmal etmeden, düzenli ve dengeli beslenmeye ve bizi takip etmeye devam!";
   var cvpkilolu = "Hedefe yakınsın! Önünde kısa bir yol var. Dengeli beslenme ve düzenli fiziksel aktivite ile tam 12'den en ideali vurabilirsin!";
-  var cvpobez = "İdeal kilonu biraz uzakta bırakmışsın ama güzel bir haberimiz var; ona kavuşmak sandığın kadar zor değil. Her şey kararlı ve motive olmakla başlıyor, asla pes etme ve motivasyonunu yüksek tut, hareket ve dengeli beslenme hayatının bir parçası olduğunda değişimin hızına sen bile inanamayacaksın.";
+  var cvpobez = "İdeal kilonu biraz uzakta bırakmışsın ama güzel bir haberimiz var; ona kavuşmak sandığın kadar zor değil. Hareket ve dengeli beslenme hayatının bir parçası olduğunda değişimin hızına sen bile inanamayacaksın.";
 
   //var kisavki = vki.toStringAsPrecision(3);
   @override
@@ -26,13 +26,14 @@ class Sonuc extends StatelessWidget {
             height: 25,
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                     margin: EdgeInsets.all(15),
                     child: Text(
-                      "SONUCUNUZ:",
+                      "SONUCUNUZ",
                       style: TextStyle(fontSize: 42, color: rkCardForeColor),
                     )),
                 SizedBox(height: 10,)
@@ -47,11 +48,11 @@ class Sonuc extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                      child: SizedBox(
+                  SizedBox(
                     height: 20,
-                  )),
+                  ),
                   Expanded(
+                    flex: 2,
                     child: Text(
                       vki <= 18.5
                           ? "Zayıf"
@@ -66,15 +67,17 @@ class Sonuc extends StatelessWidget {
                     ),
                   ),
                   Expanded(
+                    flex: 3,
                     child: Text(
                       (double.parse((vki).toStringAsFixed(2))).toString(),
                       style: TextStyle(
-                          fontSize: 100,
+                          fontSize: 80,
                           color: rkCardForeColor,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                   Expanded(
+                    flex: 7,
                     child: Container(
                       margin: EdgeInsets.all(15),
                       child: Text(
@@ -87,7 +90,7 @@ class Sonuc extends StatelessWidget {
                             : vki >= 30
                             ? cvpobez
                             : ".",
-                        style: TextStyle(fontSize: 30, color: rkCardForeColor),
+                        style: TextStyle(fontSize: 21, color: rkCardForeColor),
                       ),
                     ),
                   ),

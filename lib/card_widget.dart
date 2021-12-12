@@ -24,14 +24,14 @@ class GuzelCard extends StatelessWidget {
           children: [
             Icon(
               simge,
-              size: 180,
+              size: 120,
               color: rkCardForeColor,
             ),
             Text(
               metin,
               style: TextStyle(
                 color: rkCardForeColor,
-                fontSize: 24,
+                fontSize: 21,
               ),
             )
           ],
