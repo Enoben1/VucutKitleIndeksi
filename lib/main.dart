@@ -8,8 +8,8 @@ void main() {
 }
 
 enum cinsiyet { male, female, notrs }
-double elevationman = 10.0;
-double elevationgirl = 10.0;
+double elevationman = 7.0;
+double elevationgirl = 7.0;
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         setState(() {
                           seciliCinsiyet = cinsiyet.male;
                           elevationman = 50;
-                          elevationgirl = 10;
+                          elevationgirl = 7;
                         });
                       },
                       cardColor: seciliCinsiyet == cinsiyet.male
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         setState(() {
                           seciliCinsiyet = cinsiyet.female;
                           elevationgirl = 50;
-                          elevationman = 10;
+                          elevationman = 7;
                         });
                       },
                       cardColor: seciliCinsiyet == cinsiyet.female

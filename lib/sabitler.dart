@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Color rkZeminArkaPlan = Color.fromRGBO(29,33,54,1);
 
-Color rkAktifCardBackColor = Color.fromRGBO(45,45,60,1);
+Color rkAktifCardBackColor = Color.fromRGBO(44,44,58,1);
 Color rkPasifCardBackColor = Color.fromRGBO(50,50,68,1);
 
 Color rkCardForeColor = Color.fromRGBO(255,255,255,1);
@@ -16,12 +16,12 @@ TextStyle stilRakamYaziStyle = TextStyle(
 
 TextStyle tsActivCardColor = TextStyle(
   color: rkCardForeColor,
-  fontSize: 23,
+  fontSize: 21,
 );
 
 TextStyle tsHeightStyle = TextStyle(
   color: rkCardForeColor,
-  fontSize: 80,
+  fontSize: 65,
   fontWeight: FontWeight.bold,
 );
 
